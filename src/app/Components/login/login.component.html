@@ -1,0 +1,66 @@
+<!-- <mat-toolbar color="primary">
+  <mat-toolbar-row fxLayout="row">
+      <span>Login</span>
+  </mat-toolbar-row>
+</mat-toolbar> -->
+
+<div style="margin-top: 20px">
+  <h1 class="text-center">Login</h1>
+  <br>
+  </div>
+
+  <div class= "container" style="margin-left: 375px;">
+
+<!-- <mat-dialog-content class="mat-typography" style="position: relative;"> -->
+  <form [formGroup]="loginForm">
+      <!-- this form group can be the error -->
+      <!-- <div fxFlex fxLayout="column"> -->
+          <mat-form-field appearance="fill" fxFlex class="full-width">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" required>
+              <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+              <span *ngIf="loginForm.controls.email.errors.required"> This field is Mandatory</span>
+              <span *ngIf="loginForm.controls.email.errors.pattern"> This field is Invalid</span>
+          </mat-error>
+          </mat-form-field>
+          <br>
+
+          <mat-form-field appearance="fill" fxFlex class="full-width">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" type="password" required [type]="hide ? 'password' : 'text'">
+              <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>
+                      {{hide ? 'visibility_off':'visibility'}}
+                  </mat-icon>
+              </button>
+              <mat-error
+                  *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+              <span *ngIf="loginForm.controls.password.errors.required"> This field is Mandatory</span>
+          </mat-error>
+             </mat-form-field>
+             <br>
+<!-- </div> -->
+  </form>
+  </div>
+
+<!-- </mat-dialog-content> -->
+<div class="container">
+<!-- <mat-dialog-actions align="end"> -->
+  <button mat-raised-button color="primary" style="margin-left:480px" type="submit" (click)="handleSubmit()" [disabled]="!(loginForm.valid && loginForm.dirty)">
+      <!-- <mat-icon>login</mat-icon> -->
+      
+Login
+
+  </button >
+<button style="margin-left:20px" mat-raised-button color="warn" mat-dialog-close>
+  <!-- <mat-icon>
+      cancel
+  </mat-icon> -->
+  Close
+</button>
+<div class="text-center" style="margin-top: 20px;">
+  <a  type="submit" [routerLink]="'/signup'">User not Registered? Click to Signup </a>
+  </div>
+<!-- </mat-dialog-actions> -->
+</div>

@@ -1,0 +1,38 @@
+<header>
+  <div class="navbar navbar-dark bg-primary shadow-sm">
+    <div class="navbar-brand align-item-center d-flex" >
+      <i  style="font-size: 35px;" class="fas fa-shopping-basket"  routerLink="catalog">&nbsp;
+      </i>
+      <div routerLink="catalog">
+      <h1 style="font-size: 30px;">
+        Retail-App
+      </h1>
+    </div>
+      <div >
+        <form [formGroup]="inputForm">
+<input type="text" class="form-control" placeholder="search products" matInput formControlName="input" name="input"  class="form-control">
+</form>
+      </div>
+      <span  class="fas fa-search search-icon" (click)="handleSubmit()" routerLink="search"></span>
+      <!-- [(ngModel)]="searchTerm" (keyup)="search($event)" -->
+      
+    </div >
+      <ul *ngIf="flag == false">
+        <button style="margin: 5px;" mat-raised-button color="accent"  [routerLink]="'/signup'">Signup</button>
+        <button  style="margin-right: 15px;" mat-raised-button color="accent" [routerLink]="'/login'" >Login</button>
+       <!-- <a (click)="handleSignupAction()"></a>
+          <a  (click)="handleLoginAction()">Login </a> -->
+      </ul>
+   
+      <div *ngIf="flag === true" >
+      
+    <button mat-raised-button color="primary" style="margin-right:20px" routerLink="cart">
+      <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+      <div style="font-size: 10px;" class="badge bg-dark"></div>
+    </button>
+    <button routerLink="header" class="btn btn-danger" style="margin-right:40px" (click)="logoutAction()" routerLink="search">
+      Logout
+  </button>
+  </div>
+  </div>
+</header>
