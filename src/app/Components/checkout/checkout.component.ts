@@ -4,7 +4,7 @@ import { MatDialog,MatDialogConfig,MatDialogRef } from '@angular/material/dialog
 import { CartService } from 'src/app/Service/cart.service';
 import { CheckoutService } from 'src/app/Service/checkout.service';
 import { SnackbarService } from 'src/app/Service/snackbar.service';
-import { GlobalConstants } from 'src/app/shared/GlobalConstrants';
+ import { GlobalConstants } from 'src/app/shared/GlobalConstrants';
 import { PaymentComponent } from '../payment/payment.component';
 import { Router } from '@angular/router';
 @Component({
